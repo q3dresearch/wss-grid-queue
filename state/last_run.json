@@ -1,0 +1,9 @@
+{
+  "cadence": "monthly",
+  "completed_at": "2026-09-09T11:21:08Z",
+  "outcomes": {
+    "first_capture": 3
+  },
+  "shard": "1/1",
+  "sources": 3
+}

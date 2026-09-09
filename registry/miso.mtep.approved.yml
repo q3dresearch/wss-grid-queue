@@ -1,0 +1,33 @@
+source_id: miso.mtep.approved
+status: active
+cadence: monthly
+schema_id: miso.mtep.v1
+
+publisher: Midcontinent Independent System Operator (MISO)
+publisher_tier: first_party
+# The slot is overwritten in place. Proven, not assumed: the same URL returns
+# one sha for its advertised ?v=, for a bogus ?v=19990101000000, and for no
+# parameter at all -- so ?v= is cache-busting, not version addressing. The
+# landing page still advertises ?v=20250530143236 while last-modified is
+# 2026-06-18, i.e. the version that link was minted for is already gone.
+destroys_own_history: true
+licence: "MISO publishes these openly; no stated reuse restriction"
+personal_data: none
+storage: git
+
+endpoints:
+  - url: "https://cdn.misoenergy.org/Appendix%20A%20Status%20Report575959.xlsx"
+    delay_seconds: 2
+
+gates:
+  expect_status: 200
+  min_bytes: 250000
+  # NOT [xml]. An .xlsx is a zip, and explore guesses "xml" -- which happens to
+  # match because "openxmlformats" contains the substring, so an actual XML
+  # error page would pass too. spreadsheetml is the part that means spreadsheet.
+  content_type_any: [spreadsheetml]
+  must_not_contain: ["Access Denied", "rate limit"]
+  max_shrink_pct: 50
+
+notes: |
+  3,211 rows / $68.6B. Carries Current Cost and Expected ISD, both overwritten -- the Q1 and Q3 series. 169 rows already read M4 - Project in Service, so parse Planning Status, not the filename.

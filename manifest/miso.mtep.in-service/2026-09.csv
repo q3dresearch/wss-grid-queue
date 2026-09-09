@@ -1,0 +1,2 @@
+source_id,url,fetched_at,http_status,content_type,content_length,content_sha256,etag,last_modified,outcome,raw_ref,reason,warnings
+miso.mtep.in-service,https://cdn.misoenergy.org/MTEP%20Appendix%20A%20In%20Service%20Projects106330.xlsx,2026-09-09T11:21:01Z,200,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,706987,d60034bfc1b4e432e97062c83b63640a3bcc2e0743dd0ef877e013eb8d223338,"""4e78bd301adae4165535976de8bd51d9""","Fri, 31 Jul 2026 19:16:27 GMT",first_capture,raw/miso.mtep.in-service/2026/09/20260909T112101Z-d60034bfc1b4.bin.gz,,

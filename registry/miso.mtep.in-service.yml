@@ -1,0 +1,33 @@
+source_id: miso.mtep.in-service
+status: active
+cadence: monthly
+schema_id: miso.mtep.v1
+
+publisher: Midcontinent Independent System Operator (MISO)
+publisher_tier: first_party
+# The slot is overwritten in place. Proven, not assumed: the same URL returns
+# one sha for its advertised ?v=, for a bogus ?v=19990101000000, and for no
+# parameter at all -- so ?v= is cache-busting, not version addressing. The
+# landing page still advertises ?v=20250530143236 while last-modified is
+# 2026-06-18, i.e. the version that link was minted for is already gone.
+destroys_own_history: true
+licence: "MISO publishes these openly; no stated reuse restriction"
+personal_data: none
+storage: git
+
+endpoints:
+  - url: "https://cdn.misoenergy.org/MTEP%20Appendix%20A%20In%20Service%20Projects106330.xlsx"
+    delay_seconds: 2
+
+gates:
+  expect_status: 200
+  min_bytes: 350000
+  # NOT [xml]. An .xlsx is a zip, and explore guesses "xml" -- which happens to
+  # match because "openxmlformats" contains the substring, so an actual XML
+  # error page would pass too. spreadsheetml is the part that means spreadsheet.
+  content_type_any: [spreadsheetml]
+  must_not_contain: ["Access Denied", "rate limit"]
+  max_shrink_pct: 50
+
+notes: |
+  5,183 delivered projects / $46.8B. Retains Target MTEP Cycle beside the delivered ISD, which is why Q5 is a larder question. Held as the terminal state for the Q3 slip series.
