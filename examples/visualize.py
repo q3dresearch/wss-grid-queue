@@ -311,6 +311,74 @@ def chart_pipeline(by):
                 "\n".join(body))
 
 
+# ── Q9: the shape of delivered capital, backfilled ──────────────────────────
+
+def chart_delivered_over_time(by):
+    """Delivered capital per year, reconstructed from a single capture.
+
+    This is the one stage with real history in it: every in-service row carries
+    both its delivery date and a cost. Approved reaches back only to the cycle
+    that approved it, and Under Evaluation is a single cycle -- 597 rows all
+    stamped MTEP26 -- so that stage has no past at all and can only accumulate
+    forward.
+
+    The costs are TODAY'S. A backfilled series says what MISO now believes
+    those projects cost, not what they cost at delivery, so the line is a
+    revised history. Whether the revision moves is itself the thing captures
+    will reveal.
+    """
+    serv = {e: v for (s, e), v in by.items() if s == "miso.mtep.in-service"}
+    per = defaultdict(float)
+    for v in serv.values():
+        if v.get("expected_isd") and v.get("current_cost"):
+            per[datetime.date.fromisoformat(v["expected_isd"]).year] += float(v["current_cost"])
+    years = [y for y in sorted(per) if 2010 <= y <= 2025]   # 2026 is a part-year
+    vals = [per[y] / 1e9 for y in years]
+
+    W, L = 860, 70
+    plot_w, plot_h = W - L - 40, 200
+    top, ticks = nice_axis(max(vals))
+    body, after = header(
+        "Delivered transmission capital, rebuilt from one capture",
+        f"${sum(vals):.1f}B delivered across {years[0]}–{years[-1]}, reconstructed from the "
+        f"in-service workbook alone — it carries a delivery date and a cost for all "
+        f"{len(serv):,} projects. The figures are TODAY'S costs, so this is a revised "
+        f"history, not what was booked at the time.")
+    T = after + 46
+    H = T + plot_h + 108
+
+    for i in range(ticks + 1):
+        y = T + plot_h - plot_h * i / ticks
+        body.append(f'<line x1="{L}" y1="{y:.1f}" x2="{L+plot_w}" y2="{y:.1f}" '
+                    f'stroke="{GRID}" stroke-width="1"/>')
+        body.append(txt(L - 10, y + 4, f"${top*i/ticks:.0f}B", size=10.5,
+                        fill=MUTED, anchor="end", tab=True))
+    bw = plot_w / len(years)
+    peak = max(vals)
+    for i, (yr, v) in enumerate(zip(years, vals)):
+        h = plot_h * v / top
+        body.append(bar(L + i * bw + bw * 0.16, T + plot_h - h, bw * 0.68, max(h, 2),
+                        SLOTS[1] if v == peak else SLOTS[0]))
+        body.append(txt(L + i * bw + bw / 2, T + plot_h + 18, str(yr)[2:], size=10.5,
+                        fill=INK2, anchor="middle", tab=True))
+        if v == peak:
+            body.append(txt(L + i * bw + bw / 2, T + plot_h - h - 8, f"${v:.1f}B",
+                            size=11, fill=SLOTS[1], anchor="middle", weight="600", tab=True))
+    body.append(f'<line x1="{L}" y1="{T+plot_h:.1f}" x2="{L+plot_w}" y2="{T+plot_h:.1f}" '
+                f'stroke="{BASELINE}" stroke-width="1.5"/>')
+    body.append(txt(L + plot_w / 2, T + plot_h + 40, "year the project entered service",
+                    size=11.5, fill=INK2, anchor="middle"))
+    foot, _ = para(40, H - 52, (
+        "Q9. Only the delivered stage can be rebuilt this way. Approved reaches back only to its "
+        "MTEP cycle, and Under Evaluation is a single cycle — all 597 rows are MTEP26, so that "
+        "stage has no history and can only accumulate forward from the first capture."),
+        size=11, fill=MUTED, chars=132)
+    body += foot
+    return wrap(W, H, "Delivered transmission capital, rebuilt from one capture",
+                "MISO delivered transmission capital per in-service year, 2010-2025.",
+                "\n".join(body))
+
+
 def main():
     by = load()
     if not by:
@@ -318,6 +386,7 @@ def main():
     write("pipeline-capital.svg", chart_pipeline(by))
     write("already-late.svg", chart_already_late(by))
     write("duration-is-archived.svg", chart_duration_archived(by))
+    write("delivered-over-time.svg", chart_delivered_over_time(by))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,2 @@
+source_id,url,fetched_at,http_status,content_type,content_length,content_sha256,etag,last_modified,outcome,raw_ref,reason,warnings
+miso.schedule26.charges,https://cdn.misoenergy.org/Schedule%2026%20Indicative%20Annual%20Charges106363.xlsx,2026-09-09T11:42:48Z,200,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,626186,2bd2f61cce576141cb7acdec1e5539ec6d604561aa7eb8e95104b0465fdbecab,"""fb88ffadf20c8e071aadd86d5acf524d""","Thu, 18 Jun 2026 19:39:48 GMT",first_capture,raw/miso.schedule26.charges/2026/09/20260909T114248Z-2bd2f61cce57.bin.gz,,

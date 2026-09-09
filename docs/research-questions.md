@@ -40,12 +40,21 @@ justifies another registry entry.
 | Q6 | Which transmission owners slip worst, and by how much? | ~12 months | needs the archive |
 | Q7 | Does cost escalation predict cancellation? | ~24 months | needs the archive, and needs cancellations to occur |
 | Q8 | Do generator queues behave like transmission queues? | — | **blocked.** NYISO answers a laptop with 200 and 470,856 bytes but a GitHub runner with `202` and an empty body — a bot challenge. Local capture only; see `webprobes` row `nyiso.giq` |
+| Q9 | What is the shape of delivered capital over time? | nothing | **answered, and backfilled from a single capture.** $42.5B delivered 2010–2025, peaking at $5.5B in 2025. Every in-service row carries a delivery date and a cost, so the series reaches back to 2002 without an archive — but at TODAY'S costs, so it is a revised history |
+| Q10 | Does approved cost escalation reach ratepayers, and how fast? | ~12 months | needs the archive. Schedule 26 publishes indicative annual charges per pricing zone five years out; joining approved project cost to zone charges is the transmission-spend-to-bill link |
+| Q11 | How much do MISO's own five-year charge projections move? | ~12 months | needs the archive. Schedule 26 is a *projection*: today's estimate of 2027–2031 charges overwrites last year's estimate of the same years, and only the current one is published |
+| Q12 | Is the backfilled delivered series itself revised? | ~12 months | needs the archive. Q9 reconstructs history from today's costs; whether MISO restates a delivered project's cost after the fact is only visible across captures, and would make every backfilled series provisional |
+| Q13 | Does transmission approval follow generation queue pressure? | a source | **source not yet added.** MISO's generator interconnection queue is a React app backed by a document API; the queue file itself was not found from the landing page. Until it is, generation and transmission cannot be joined |
 
 **Q5 is the important negative result.** The obvious pitch for this repo —
 "how long do transmission projects take" — is already answerable from a single
 fetch, because MISO keeps the proposal cycle. Building a capture for it would
 have been building an archive of something already archived. What perishes is
 the *cost* and the *promise*, not the duration.
+
+**Q13 is the only live trigger for another source.** Everything else here is
+either answered, or waiting on the archive to accumulate — and waiting on time
+is not a reason to widen the registry.
 
 ## What would make this worth stopping
 

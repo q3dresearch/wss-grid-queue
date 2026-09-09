@@ -35,6 +35,20 @@ years over. MISO does not publish what those dates used to be — only the
 current one, so the slip that produced them is invisible here and will only
 become visible as captures accumulate.
 
+## How much has been delivered, and when
+
+![Delivered capital by year](examples/charts/delivered-over-time.svg)
+
+One stage has real history inside a single capture: every in-service row carries
+a delivery date and a cost, so **$42.5B of deliveries 2010–2025** can be rebuilt
+without any archive at all, peaking at $5.5B in 2025. The approved stage reaches
+back only to the MTEP cycle that approved it, and *Under Evaluation* has no past
+whatsoever — all 597 rows are stamped `MTEP26`.
+
+The costs are today's, so that reconstruction is a **revised** history. Whether
+MISO restates a delivered project's cost after the fact is itself only visible
+across captures, which is what makes every backfilled series provisional.
+
 ## What this repo does NOT exist to answer
 
 ![Duration is already archived](examples/charts/duration-is-archived.svg)
@@ -59,6 +73,8 @@ Date ranges are machine-readable in [health/health.csv](health/health.csv)
 | `miso.mtep.under-evaluation` | 597 projects / $17.0B awaiting an Appendix A decision | 2026-09 | ongoing |
 | `miso.mtep.approved` | 1,497 projects across 3,211 facility rows / $68.6B | 2026-09 | ongoing |
 | `miso.mtep.in-service` | 5,183 delivered projects / $46.8B | 2026-09 | ongoing |
+| `miso.schedule26.charges` | indicative annual transmission charges per pricing zone, 5 years out | 2026-09 | ongoing |
+| `miso.schedule26a.mvp` | Schedule 26-A, Multi-Value Project portfolio charges | 2026-09 | ongoing |
 
 Rules for this table: a **new series** gets a row with the date coverage
 starts; a **discontinued series** keeps its row with a *covered until* date

@@ -1,0 +1,30 @@
+source_id: miso.schedule26.charges
+status: active
+cadence: monthly
+schema_id: miso.schedule26.v1
+
+publisher: Midcontinent Independent System Operator (MISO)
+publisher_tier: first_party
+# Same mutable-slot pattern as the MTEP workbooks: a fixed cdn.misoenergy.org
+# URL with a ?v= cache-buster that addresses nothing. What makes this one
+# perishable is the CONTENT -- it is a forward projection. Only the current
+# projection of 2027-2031 charges is published; last year's projection of the
+# same years is gone.
+destroys_own_history: true
+licence: "MISO publishes these openly; no stated reuse restriction"
+personal_data: none
+storage: git
+
+endpoints:
+  - url: "https://cdn.misoenergy.org/Schedule%2026%20Indicative%20Annual%20Charges106363.xlsx"
+    delay_seconds: 2
+
+gates:
+  expect_status: 200
+  min_bytes: 300000
+  content_type_any: [spreadsheetml]
+  must_not_contain: ["Access Denied", "rate limit"]
+  max_shrink_pct: 50
+
+notes: |
+  Indicative annual transmission charges by pricing zone, projected five years out. The ratepayer end of the MTEP pipe: Q10 joins approved project cost to what zones are told they will pay.
