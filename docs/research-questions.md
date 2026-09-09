@@ -56,6 +56,26 @@ the *cost* and the *promise*, not the duration.
 either answered, or waiting on the archive to accumulate — and waiting on time
 is not a reason to widen the registry.
 
+## Who cares, and what they would do differently
+
+A question with no named party who would act on the answer is trivia, and
+trivia does not justify a job that runs for years. Each row names a decision,
+not a sector.
+
+| who | questions | the decision it changes |
+| --- | --- | --- |
+| **State commission staff and consumer advocates** (e.g. Michigan PSC, Minnesota DOC) | Q1, Q10, Q11 | whether to contest a transmission rate filing. Today a utility's cost figure arrives with no published history to check it against; an archive turns "this project now costs X" into "this project cost Y when it was approved" |
+| **Industrial energy buyers and data-centre siting teams** | Q10 | which pricing zone to build in. Three zones carry 61% of the 2027 charge and the projections move — siting on today's number without knowing how it drifts is a five-year bet on a figure nobody archives |
+| **Transmission developers and EPC contractors** | Q6, Q3 | where to bid, and whose schedule to believe. METC has $192M behind schedule across 21 facilities while ITC Midwest has 80 late facilities for half the money — those are different counterparties |
+| **Generation developers with queued projects** | Q13 | whether the transmission they depend on will actually arrive. This is the join that does not exist yet, and the reason Q13 is the one live `source not yet added` |
+| **Energy journalists and grid analysts** | Q2, Q9, Q7 | what to write, and whether a cancellation was foreseeable. Cost escalation before a cancellation is only visible to someone who kept the earlier numbers |
+| **MISO stakeholders in the MTEP process itself** | Q4 | which proposals to support. The conversion rate from *Under Evaluation* to approved is not published, and 597 projects worth $17.0B are in that state right now |
+
+**Who this is NOT for.** Anyone who needs settlement-grade numbers. MISO states
+plainly that these values are *"indicative only … not intended to be relied upon
+for settlement or ratemaking purposes."* This archive is evidence about how
+estimates move, not a billing record.
+
 ## What would make this worth stopping
 
 If, after two years, `Current Cost` turns out to move for fewer than ~5% of

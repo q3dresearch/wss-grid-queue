@@ -75,9 +75,26 @@ delivered date. Median one year, p90 four, max fifteen, across 5,169 delivered
 projects. Capturing that would have been archiving something already archived.
 
 Recording the negative result is the point:
-[`docs/research-questions.md`](docs/research-questions.md) carries eight
-questions with honest statuses, and only the ones that genuinely need an
-archive are open.
+[`docs/research-questions.md`](docs/research-questions.md) carries thirteen
+questions with honest statuses — three answered, two answered in part, six
+waiting on captures to accumulate, one blocked, and exactly one naming a source
+that does not exist yet. Only that last kind justifies adding to the registry.
+
+## Who this is for
+
+| who | the decision it changes |
+| --- | --- |
+| **State commission staff and consumer advocates** | whether to contest a rate filing. A utility's cost figure arrives with no published history to check it against |
+| **Industrial energy buyers and data-centre siting teams** | which pricing zone to build in — three zones carry 61% of the 2027 charge, and the projections move |
+| **Transmission developers and EPC contractors** | where to bid, and whose schedule to believe |
+| **Generation developers with queued projects** | whether the transmission they depend on will arrive |
+| **Energy journalists and grid analysts** | whether a cancellation was foreseeable from its cost history |
+
+**Not for** anyone needing settlement-grade numbers. MISO states these values
+are *"indicative only … not intended to be relied upon for settlement or
+ratemaking purposes."* This is evidence about how estimates move, not a billing
+record. Full version with per-question mapping in
+[`docs/research-questions.md`](docs/research-questions.md#who-cares-and-what-they-would-do-differently).
 
 ## Coverage
 
@@ -112,10 +129,12 @@ wrong halves the headline, silently — it did here once, before it was caught.
 
 ## How it runs
 
-Three scheduled workflows a day — capture (22:10 UTC), health (23:40),
-derive (00:20) — powered by the
-[wss](https://github.com/q3dresearch/wss) engine, pinned to one
-version. No workflow ever names a source: capture shards whatever
+Three scheduled workflows, all on the **3rd of each month** — capture (00:20
+UTC), health (02:40), derive (03:20) — powered by the
+[wss](https://github.com/q3dresearch/wss-engine) engine, pinned to one
+version. Monthly because MISO refreshes these workbooks around the turn of the
+month; nothing here changes fast enough to justify weekly, and daily has never
+changed an answer anywhere in this fleet. No workflow ever names a source: capture shards whatever
 `registry/` marks active, so infrastructure never changes when sources do.
 The bot commits **data only** — it never changes code; the one config it may
 touch is flipping a repeatedly-failing source to `auto_disabled`, with an
