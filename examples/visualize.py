@@ -379,6 +379,120 @@ def chart_delivered_over_time(by):
                 "\n".join(body))
 
 
+# ── Q10: who is billed for it ───────────────────────────────────────────────
+
+def chart_who_pays(by):
+    ch = {e[5:]: float(v["charge_2027"]) for (s, e), v in by.items()
+          if s == "miso.schedule26.charges" and v.get("charge_2027")}
+    total = sum(ch.values())
+    top = sorted(ch.items(), key=lambda kv: -kv[1])[:12]
+
+    W, L = 860, 96
+    plot_w, row_h = W - L - 200, 30
+    peak, ticks = nice_axis(max(v for _, v in top) / 1e6)
+    body, after = header(
+        "Three pricing zones carry 61% of the 2027 transmission bill",
+        f"MISO's indicative Schedule 26 charges for 2027 total ${total/1e6:,.0f}M across "
+        f"{len(ch)} pricing zones. This is a projection: today's estimate of 2027 overwrites "
+        f"last year's estimate of the same year, at a fixed URL, and only the current one is "
+        f"published.")
+    T = after + 46
+    H = T + row_h * len(top) + 84
+
+    for i in range(ticks + 1):
+        x = L + plot_w * i / ticks
+        body.append(f'<line x1="{x:.1f}" y1="{T-8}" x2="{x:.1f}" '
+                    f'y2="{T + row_h*len(top):.1f}" stroke="{GRID}" stroke-width="1"/>')
+        body.append(txt(x, T - 16, f"${peak*i/ticks:.0f}M", size=10.5, fill=MUTED,
+                        anchor="middle", tab=True))
+    for i, (zone, v) in enumerate(top):
+        y = T + i * row_h
+        body.append(txt(L - 12, y + 20, zone, size=12, fill=INK, anchor="end"))
+        w = plot_w * (v / 1e6) / peak
+        body.append(bar(L, y + 5, max(w, 2), 20, SLOTS[0] if i >= 3 else SLOTS[1]))
+        body.append(txt(L + max(w, 2) + 10, y + 20,
+                        f"${v/1e6:.1f}M  ·  {100*v/total:.1f}%", size=11, fill=INK2, tab=True))
+    body.append(f'<line x1="{L}" y1="{T-8}" x2="{L}" y2="{T + row_h*len(top):.1f}" '
+                f'stroke="{BASELINE}" stroke-width="1.5"/>')
+    foot, _ = para(40, H - 50, (
+        "Q10, the ratepayer end of the pipe. Joining this to approved project cost is what would "
+        "show whether escalation reaches bills — and needs both series captured over time, since "
+        "MISO publishes only the current projection of each."), size=11, fill=MUTED, chars=132)
+    body += foot
+    return wrap(W, H, "Three pricing zones carry 61% of the 2027 transmission bill",
+                "MISO indicative Schedule 26 annual charges for 2027, by pricing zone.",
+                "\n".join(body))
+
+
+# ── Q6: who is late, right now ──────────────────────────────────────────────
+
+def chart_late_by_owner(by):
+    live = {e: v for (s, e), v in by.items()
+            if s == "miso.mtep.approved" and v.get("planning_status", "").startswith(("M2", "M3"))}
+    agg = defaultdict(lambda: {"n": 0, "late": 0, "latecap": 0.0})
+    for v in live.values():
+        a = agg[v.get("submitting_to", "(unknown)")]
+        a["n"] += 1
+        if v.get("expected_isd") and datetime.date.fromisoformat(v["expected_isd"]) < TODAY:
+            a["late"] += 1
+            a["latecap"] += float(v["current_cost"]) if v.get("current_cost") else 0.0
+    top = sorted((kv for kv in agg.items() if kv[1]["late"]),
+                 key=lambda kv: -kv[1]["latecap"])[:10]
+
+    def short(name):
+        # .title() turns METC into "Metc"; keeping every short uppercase token
+        # instead leaves "Northern States POWER". Length cannot separate an
+        # acronym from a shouted English word, so the common words are listed
+        # and everything else short and uppercase is assumed to be an acronym.
+        WORDS = {"POWER", "LIGHT", "INC", "INC.", "CO", "CO.", "AND", "THE",
+                 "GAS", "ELECTRIC", "ENERGY", "SUPPLY", "COMPANY", "STATES"}
+        words = [w if (w.isupper() and len(w) <= 5 and w not in WORDS) else w.title()
+                 for w in name.split()]
+        n = " ".join(words)
+        for drop in (" Company", " Inc.", ", Inc", " Corporation"):
+            n = n.replace(drop, "")
+        n = n.replace(" Cooperative Aect", " Coop").replace(" Power Supply Cooperative Wpst", "")
+        n = n.replace(" Cooperative", " Coop")
+        return n if len(n) <= 26 else n[:25] + "…"
+
+    W, L = 860, 220
+    plot_w, row_h = W - L - 190, 34
+    peak, ticks = nice_axis(max(a["latecap"] for _, a in top) / 1e6)
+    late_owners = sum(1 for a in agg.values() if a["late"])
+    body, after = header(
+        "Lateness is not evenly spread across transmission owners",
+        f"{late_owners} of {len(agg)} owners with a live facility have at least one past its "
+        f"published in-service date. Ranked by capital, not count — the owner with the most late "
+        f"facilities is not the one with the most money sitting behind schedule.")
+    T = after + 46
+    H = T + row_h * len(top) + 84
+
+    for i in range(ticks + 1):
+        x = L + plot_w * i / ticks
+        body.append(f'<line x1="{x:.1f}" y1="{T-8}" x2="{x:.1f}" '
+                    f'y2="{T + row_h*len(top):.1f}" stroke="{GRID}" stroke-width="1"/>')
+        body.append(txt(x, T - 16, f"${peak*i/ticks:.0f}M", size=10.5, fill=MUTED,
+                        anchor="middle", tab=True))
+    for i, (name, a) in enumerate(top):
+        y = T + i * row_h
+        body.append(txt(L - 12, y + 22, short(name), size=11.5, fill=INK, anchor="end"))
+        w = plot_w * (a["latecap"] / 1e6) / peak
+        body.append(bar(L, y + 6, max(w, 2), 22, SLOTS[1] if i < 3 else SLOTS[0]))
+        body.append(txt(L + max(w, 2) + 10, y + 22,
+                        f"${a['latecap']/1e6:.0f}M  ·  {a['late']} of {a['n']} late",
+                        size=11, fill=INK2, tab=True))
+    body.append(f'<line x1="{L}" y1="{T-8}" x2="{L}" y2="{T + row_h*len(top):.1f}" '
+                f'stroke="{BASELINE}" stroke-width="1.5"/>')
+    foot, _ = para(40, H - 50, (
+        "Q6, partially. This is who is late TODAY, which one capture can show. How far each "
+        "owner's dates slipped before arriving here needs the archive, because MISO overwrites "
+        "the promise every time it moves. Facility grain."), size=11, fill=MUTED, chars=132)
+    body += foot
+    return wrap(W, H, "Lateness is not evenly spread across transmission owners",
+                "Late approved capital by MISO transmission owner, facility grain.",
+                "\n".join(body))
+
+
 def main():
     by = load()
     if not by:
@@ -387,6 +501,8 @@ def main():
     write("already-late.svg", chart_already_late(by))
     write("duration-is-archived.svg", chart_duration_archived(by))
     write("delivered-over-time.svg", chart_delivered_over_time(by))
+    write("late-by-owner.svg", chart_late_by_owner(by))
+    write("who-pays.svg", chart_who_pays(by))
 
 
 if __name__ == "__main__":

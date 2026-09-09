@@ -49,6 +49,22 @@ The costs are today's, so that reconstruction is a **revised** history. Whether
 MISO restates a delivered project's cost after the fact is itself only visible
 across captures, which is what makes every backfilled series provisional.
 
+## Who is late, and who pays
+
+![Late capital by transmission owner](examples/charts/late-by-owner.svg)
+
+Lateness is concentrated. **24 of 50 owners** with a live facility have at least
+one past its date, but ranked by *capital* rather than count the order changes:
+METC has $192M behind schedule across 21 facilities, while ITC Midwest has four
+times as many late facilities (80) for half the money.
+
+![2027 charges by pricing zone](examples/charts/who-pays.svg)
+
+At the other end of the pipe, MISO's indicative Schedule 26 charges for 2027
+total **$443M across 34 pricing zones**, and three of them — METC, ATC and NSP —
+carry 61% of it. Joining the two ends is Q10, and it needs both series captured
+over time, because MISO publishes only the current projection of each.
+
 ## What this repo does NOT exist to answer
 
 ![Duration is already archived](examples/charts/duration-is-archived.svg)
