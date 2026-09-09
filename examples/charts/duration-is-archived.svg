@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="400" viewBox="0 0 860 400" role="img" aria-label="MISO already publishes how long a project takes">
+<title>MISO already publishes how long a project takes</title>
+<desc>Histogram of years from MTEP proposal cycle to in-service, 5,182 delivered projects.</desc>
+<rect width="860" height="400" fill="#fcfcfb"/>
+<text x="40.0" y="38.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="19" fill="#0b0b0b" text-anchor="start" font-weight="600" style="">MISO already publishes how long a project takes</text>
+<text x="40.0" y="62.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12.5" fill="#52514e" text-anchor="start" font-weight="normal" style="">5,169 delivered projects, measured from the MTEP cycle that proposed them to the in-service date. Median 1 year(s).</text>
+<text x="40.0" y="79.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12.5" fill="#52514e" text-anchor="start" font-weight="normal" style="">Because `Target MTEP Cycle` survives beside the delivered date, this needs no archive — so it is the one question this</text>
+<text x="40.0" y="96.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12.5" fill="#52514e" text-anchor="start" font-weight="normal" style="">repo does NOT exist to answer.</text>
+<line x1="70" y1="302.0" x2="820" y2="302.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="60.0" y="306.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10.5" fill="#898781" text-anchor="end" font-weight="normal" style="font-variant-numeric: tabular-nums;">0</text>
+<line x1="70" y1="238.7" x2="820" y2="238.7" stroke="#e1e0d9" stroke-width="1"/>
+<text x="60.0" y="242.7" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10.5" fill="#898781" text-anchor="end" font-weight="normal" style="font-variant-numeric: tabular-nums;">500</text>
+<line x1="70" y1="175.3" x2="820" y2="175.3" stroke="#e1e0d9" stroke-width="1"/>
+<text x="60.0" y="179.3" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10.5" fill="#898781" text-anchor="end" font-weight="normal" style="font-variant-numeric: tabular-nums;">1,000</text>
+<line x1="70" y1="112.0" x2="820" y2="112.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="60.0" y="116.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10.5" fill="#898781" text-anchor="end" font-weight="normal" style="font-variant-numeric: tabular-nums;">1,500</text>
+<path d="M80.0,277.9 h38.5 q4,0 4,4 v16.1 q0,4 -4,4 h-38.5 z" fill="#1baf7a"/>
+<text x="101.2" y="320.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#52514e" text-anchor="middle" font-weight="normal" style="font-variant-numeric: tabular-nums;">-1</text>
+<path d="M142.5,167.5 h38.5 q4,0 4,4 v126.5 q0,4 -4,4 h-38.5 z" fill="#1baf7a"/>
+<text x="163.8" y="320.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#52514e" text-anchor="middle" font-weight="normal" style="font-variant-numeric: tabular-nums;">0</text>
+<path d="M205.0,128.5 h38.5 q4,0 4,4 v165.5 q0,4 -4,4 h-38.5 z" fill="#1baf7a"/>
+<text x="226.2" y="320.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#52514e" text-anchor="middle" font-weight="normal" style="font-variant-numeric: tabular-nums;">1</text>
+<path d="M267.5,163.8 h38.5 q4,0 4,4 v130.2 q0,4 -4,4 h-38.5 z" fill="#1baf7a"/>
+<text x="288.8" y="320.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#52514e" text-anchor="middle" font-weight="normal" style="font-variant-numeric: tabular-nums;">2</text>
+<path d="M330.0,217.1 h38.5 q4,0 4,4 v76.9 q0,4 -4,4 h-38.5 z" fill="#1baf7a"/>
+<text x="351.2" y="320.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#52514e" text-anchor="middle" font-weight="normal" style="font-variant-numeric: tabular-nums;">3</text>
+<path d="M392.5,258.2 h38.5 q4,0 4,4 v35.8 q0,4 -4,4 h-38.5 z" fill="#1baf7a"/>
+<text x="413.8" y="320.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#52514e" text-anchor="middle" font-weight="normal" style="font-variant-numeric: tabular-nums;">4</text>
+<path d="M455.0,276.3 h38.5 q4,0 4,4 v17.7 q0,4 -4,4 h-38.5 z" fill="#1baf7a"/>
+<text x="476.2" y="320.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#52514e" text-anchor="middle" font-weight="normal" style="font-variant-numeric: tabular-nums;">5</text>
+<path d="M517.5,289.6 h38.5 q4,0 4,4 v4.4 q0,4 -4,4 h-38.5 z" fill="#1baf7a"/>
+<text x="538.8" y="320.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#52514e" text-anchor="middle" font-weight="normal" style="font-variant-numeric: tabular-nums;">6</text>
+<path d="M580.0,292.9 h38.5 q4,0 4,4 v1.1 q0,4 -4,4 h-38.5 z" fill="#1baf7a"/>
+<text x="601.2" y="320.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#52514e" text-anchor="middle" font-weight="normal" style="font-variant-numeric: tabular-nums;">7</text>
+<path d="M642.5,297.8 h40.4 q2.09,0 2.09,2.09 v0.0 q0,2.09 -2.09,2.09 h-40.4 z" fill="#1baf7a"/>
+<text x="663.8" y="320.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#52514e" text-anchor="middle" font-weight="normal" style="font-variant-numeric: tabular-nums;">8</text>
+<path d="M705.0,300.5 h41.5 q1.0,0 1.0,1.0 v0.0 q0,1.0 -1.0,1.0 h-41.5 z" fill="#1baf7a"/>
+<text x="726.2" y="320.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#52514e" text-anchor="middle" font-weight="normal" style="font-variant-numeric: tabular-nums;">9</text>
+<path d="M767.5,299.2 h41.1 q1.3933333333333333,0 1.3933333333333333,1.3933333333333333 v0.0 q0,1.3933333333333333 -1.3933333333333333,1.3933333333333333 h-41.1 z" fill="#1baf7a"/>
+<text x="788.8" y="320.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#52514e" text-anchor="middle" font-weight="normal" style="font-variant-numeric: tabular-nums;">10+</text>
+<line x1="70" y1="302.0" x2="820" y2="302.0" stroke="#c3c2b7" stroke-width="1.5"/>
+<text x="445.0" y="342.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" style="">years from proposal cycle to in-service</text>
+<text x="40.0" y="360.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="start" font-weight="normal" style="">Q5. Recorded as an answered negative result: the obvious pitch for this repo was already archived by the publisher, and capturing it</text>
+<text x="40.0" y="377.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="start" font-weight="normal" style="">would have added nothing.</text>
+</svg>

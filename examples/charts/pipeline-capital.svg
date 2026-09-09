@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="400.0" viewBox="0 0 860 400.0" role="img" aria-label="Capital carried at a cost that overwrites its own history">
+<title>Capital carried at a cost that overwrites its own history</title>
+<desc>MISO MTEP pipeline by stage: capital and distinct project count.</desc>
+<rect width="860" height="400.0" fill="#fcfcfb"/>
+<text x="40.0" y="38.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="19" fill="#0b0b0b" text-anchor="start" font-weight="600" style="">$85.6B is carried at a cost that overwrites its own history</text>
+<text x="40.0" y="62.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12.5" fill="#52514e" text-anchor="start" font-weight="normal" style="">MISO publishes `Current Cost`. There is no original-cost column anywhere, and the workbooks sit at fixed URLs that are</text>
+<text x="40.0" y="79.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12.5" fill="#52514e" text-anchor="start" font-weight="normal" style="">overwritten in place — so what a project was approved at is unrecoverable from MISO's own record.</text>
+<line x1="210.0" y1="128.0" x2="210.0" y2="322.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="210.0" y="120.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10.5" fill="#898781" text-anchor="middle" font-weight="normal" style="font-variant-numeric: tabular-nums;">$0B</text>
+<line x1="330.0" y1="128.0" x2="330.0" y2="322.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="330.0" y="120.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10.5" fill="#898781" text-anchor="middle" font-weight="normal" style="font-variant-numeric: tabular-nums;">$20B</text>
+<line x1="450.0" y1="128.0" x2="450.0" y2="322.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="450.0" y="120.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10.5" fill="#898781" text-anchor="middle" font-weight="normal" style="font-variant-numeric: tabular-nums;">$40B</text>
+<line x1="570.0" y1="128.0" x2="570.0" y2="322.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="570.0" y="120.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10.5" fill="#898781" text-anchor="middle" font-weight="normal" style="font-variant-numeric: tabular-nums;">$60B</text>
+<line x1="690.0" y1="128.0" x2="690.0" y2="322.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="690.0" y="120.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10.5" fill="#898781" text-anchor="middle" font-weight="normal" style="font-variant-numeric: tabular-nums;">$80B</text>
+<text x="196.0" y="166.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#0b0b0b" text-anchor="end" font-weight="normal" style="">Under evaluation</text>
+<path d="M210.0,146.0 h98.0 q4,0 4,4 v28.0 q0,4 -4,4 h-98.0 z" fill="#2a78d6"/>
+<text x="322.0" y="169.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal" style="font-variant-numeric: tabular-nums;">$17.0B  ·  597 projects</text>
+<text x="196.0" y="228.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#0b0b0b" text-anchor="end" font-weight="normal" style="">Appendix A approved</text>
+<path d="M210.0,208.0 h407.7 q4,0 4,4 v28.0 q0,4 -4,4 h-407.7 z" fill="#eb6834"/>
+<text x="631.7" y="231.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal" style="font-variant-numeric: tabular-nums;">$68.6B  ·  1,497 projects</text>
+<text x="196.0" y="290.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#0b0b0b" text-anchor="end" font-weight="normal" style="">Delivered</text>
+<path d="M210.0,270.0 h276.8 q4,0 4,4 v28.0 q0,4 -4,4 h-276.8 z" fill="#1baf7a"/>
+<text x="500.8" y="293.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal" style="font-variant-numeric: tabular-nums;">$46.8B  ·  5,183 projects</text>
+<line x1="210" y1="128.0" x2="210" y2="322.0" stroke="#c3c2b7" stroke-width="1.5"/>
+<text x="40.0" y="350.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="start" font-weight="normal" style="">Q1, the founding question. Only repeated capture can say what these figures were before today. Counts are distinct MTEP Project IDs;</text>
+<text x="40.0" y="367.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="start" font-weight="normal" style="">the Approved workbook's 1,497 projects arrive as 3,211 facility rows.</text>
+</svg>
