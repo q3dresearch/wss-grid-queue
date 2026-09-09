@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="429.0" viewBox="0 0 880 429.0" role="img" aria-label="NYISO generation queue: abandoned against built">
+<title>NYISO generation queue: abandoned against built</title>
+<desc>Capacity and project count by queue outcome, all time.</desc>
+<rect width="880" height="429.0" fill="#fcfcfb"/>
+<text x="40.0" y="38.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="19" fill="#0b0b0b" text-anchor="start" font-weight="600" style="">319 GW abandoned, 15 GW built</text>
+<text x="40.0" y="62.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12.5" fill="#52514e" text-anchor="start" font-weight="normal" style="">Every generation project ever in the NYISO interconnection queue: 1,697 of them. 149 reached service — 8.8%. The</text>
+<text x="40.0" y="79.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12.5" fill="#52514e" text-anchor="start" font-weight="normal" style="">withdrawn back-catalogue is complete, so this needs no archive; what only capture can add is WHEN each one left, and</text>
+<text x="40.0" y="96.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12.5" fill="#52514e" text-anchor="start" font-weight="normal" style="">the promised date NYISO erases on 147 of 149 it delivers.</text>
+<line x1="168.0" y1="151.0" x2="168.0" y2="345.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="168.0" y="143.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10.5" fill="#898781" text-anchor="middle" font-weight="normal" style="font-variant-numeric: tabular-nums;">0 GW</text>
+<line x1="294.0" y1="151.0" x2="294.0" y2="345.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="294.0" y="143.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10.5" fill="#898781" text-anchor="middle" font-weight="normal" style="font-variant-numeric: tabular-nums;">100 GW</text>
+<line x1="420.0" y1="151.0" x2="420.0" y2="345.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="420.0" y="143.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10.5" fill="#898781" text-anchor="middle" font-weight="normal" style="font-variant-numeric: tabular-nums;">200 GW</text>
+<line x1="546.0" y1="151.0" x2="546.0" y2="345.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="546.0" y="143.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10.5" fill="#898781" text-anchor="middle" font-weight="normal" style="font-variant-numeric: tabular-nums;">300 GW</text>
+<line x1="672.0" y1="151.0" x2="672.0" y2="345.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="672.0" y="143.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10.5" fill="#898781" text-anchor="middle" font-weight="normal" style="font-variant-numeric: tabular-nums;">400 GW</text>
+<text x="154.0" y="189.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#0b0b0b" text-anchor="end" font-weight="normal" style="">Built</text>
+<path d="M168.0,169.0 h14.6 q4,0 4,4 v28.0 q0,4 -4,4 h-14.6 z" fill="#1baf7a"/>
+<text x="196.6" y="192.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal" style="font-variant-numeric: tabular-nums;">14.8 GW  ·  149 projects  ·  8.8%</text>
+<text x="154.0" y="251.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#0b0b0b" text-anchor="end" font-weight="normal" style="">Withdrawn</text>
+<path d="M168.0,231.0 h398.1 q4,0 4,4 v28.0 q0,4 -4,4 h-398.1 z" fill="#eb6834"/>
+<text x="580.1" y="254.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal" style="font-variant-numeric: tabular-nums;">319.1 GW  ·  1,452 projects  ·  85.6%</text>
+<text x="154.0" y="313.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#0b0b0b" text-anchor="end" font-weight="normal" style="">Still waiting</text>
+<path d="M168.0,293.0 h9.0 q4,0 4,4 v28.0 q0,4 -4,4 h-9.0 z" fill="#2a78d6"/>
+<text x="191.0" y="316.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal" style="font-variant-numeric: tabular-nums;">10.3 GW  ·  96 projects  ·  5.7%</text>
+<line x1="168" y1="151.0" x2="168" y2="345.0" stroke="#c3c2b7" stroke-width="1.5"/>
+<text x="40.0" y="379.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="start" font-weight="normal" style="">Q8. Counted from rows carrying a queue position — openpyxl's max_row reports 340 active where only 96 exist, because it measures the</text>
+<text x="40.0" y="396.0" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#898781" text-anchor="start" font-weight="normal" style="">sheet dimension and counts formatting-only rows. Capacity is summer MW where published.</text>
+</svg>

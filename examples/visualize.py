@@ -493,6 +493,80 @@ def chart_late_by_owner(by):
                 "\n".join(body))
 
 
+# ── Q8: what happens to a generation project in New York ────────────────────
+
+def chart_nyiso_survival(by):
+    """The generation queue's survival rate, from one capture.
+
+    MISO's files say what transmission costs; NYISO's say what generation
+    actually gets built. Both answer the same question from opposite ends, and
+    this is the half that needs no archive at all -- the Withdrawn sheet is a
+    complete back-catalogue, so the survival rate is readable today.
+
+    What the archive adds is WHEN each project left, and what its promised date
+    was before it was erased. NYISO overwrites that on 147 of 149 delivered
+    projects.
+    """
+    ny = defaultdict(dict)
+    for (s, e), v in by.items():
+        if s.startswith("nyiso"):
+            ny[e] = v
+    states = [("in_service", "Built", SLOTS[2]),
+              ("withdrawn", "Withdrawn", SLOTS[1]),
+              ("active", "Still waiting", SLOTS[0])]
+    stat = {}
+    for key, label, colour in states:
+        sel = [v for v in ny.values() if v.get("queue_state") == key]
+        gw = 0.0
+        for v in sel:
+            try:
+                gw += float(v.get("summer_mw") or 0) / 1000
+            except ValueError:
+                pass
+        stat[key] = (label, colour, len(sel), gw)
+    total_n = sum(s[2] for s in stat.values())
+
+    W, L = 880, 168
+    plot_w, row_h = W - L - 208, 62
+    peak, ticks = nice_axis(max(s[3] for s in stat.values()))
+    body, after = header(
+        f"{stat['withdrawn'][3]:.0f} GW abandoned, {stat['in_service'][3]:.0f} GW built",
+        f"Every generation project ever in the NYISO interconnection queue: "
+        f"{total_n:,} of them. {stat['in_service'][2]} reached service — "
+        f"{100*stat['in_service'][2]/total_n:.1f}%. The withdrawn back-catalogue is "
+        f"complete, so this needs no archive; what only capture can add is WHEN each "
+        f"one left, and the promised date NYISO erases on 147 of 149 it delivers.")
+    T = after + 46
+    H = T + row_h * len(states) + 84
+
+    for i in range(ticks + 1):
+        x = L + plot_w * i / ticks
+        body.append(f'<line x1="{x:.1f}" y1="{T-8}" x2="{x:.1f}" '
+                    f'y2="{T + row_h*len(states):.1f}" stroke="{GRID}" stroke-width="1"/>')
+        body.append(txt(x, T - 16, f"{peak*i/ticks:.0f} GW", size=10.5, fill=MUTED,
+                        anchor="middle", tab=True))
+    for i, (key, _, _) in enumerate(states):
+        label, colour, n, gw = stat[key]
+        y = T + i * row_h
+        body.append(txt(L - 14, y + 30, label, size=13, fill=INK, anchor="end"))
+        w = plot_w * gw / peak if peak else 0
+        body.append(bar(L, y + 10, max(w, 2), 36, colour))
+        body.append(txt(L + max(w, 2) + 10, y + 33,
+                        f"{gw:,.1f} GW  ·  {n:,} projects  ·  {100*n/total_n:.1f}%",
+                        size=12, fill=INK2, tab=True))
+    body.append(f'<line x1="{L}" y1="{T-8}" x2="{L}" y2="{T + row_h*len(states):.1f}" '
+                f'stroke="{BASELINE}" stroke-width="1.5"/>')
+    foot, _ = para(40, H - 50, (
+        "Q8. Counted from rows carrying a queue position — openpyxl's max_row reports 340 "
+        "active where only 96 exist, because it measures the sheet dimension and counts "
+        "formatting-only rows. Capacity is summer MW where published."),
+        size=11, fill=MUTED, chars=132)
+    body += foot
+    return wrap(W, H, "NYISO generation queue: abandoned against built",
+                "Capacity and project count by queue outcome, all time.",
+                "\n".join(body))
+
+
 def main():
     by = load()
     if not by:
@@ -503,6 +577,7 @@ def main():
     write("delivered-over-time.svg", chart_delivered_over_time(by))
     write("late-by-owner.svg", chart_late_by_owner(by))
     write("who-pays.svg", chart_who_pays(by))
+    write("nyiso-survival.svg", chart_nyiso_survival(by))
 
 
 if __name__ == "__main__":

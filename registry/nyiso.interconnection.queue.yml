@@ -1,0 +1,60 @@
+source_id: nyiso.interconnection.queue
+status: active
+cadence: monthly
+schema_id: nyiso.giq.v1
+
+publisher: New York Independent System Operator (NYISO)
+publisher_tier: first_party
+# Only the current month is addressable. Verified 2026-09-09: the July 2026
+# filename returns 200 without needing its GUID, while June 2026, January 2026
+# and July 2025 all return a clean 404.
+#
+# The decisive fact is on the In Service sheet. Of 149 completed projects, the
+# Proposed In-Service column is overwritten with a status marker -- I/S, IS,
+# N/A -- on 147 of them, and Proposed COD on 146. NYISO ERASES the promised
+# date at the moment completion makes the slip measurable, so filed-vs-actual
+# cannot be reconstructed from its own file. That is what separates it from
+# CAISO, which keeps Proposed On-line Date (as filed with IR) beside the
+# actual and was correctly rejected as a larder.
+destroys_own_history: true
+licence: "NYISO publishes this openly; no stated reuse restriction"
+personal_data: parties_only
+storage: git
+
+# CI CANNOT CAPTURE THIS SOURCE. Verified 2026-09-09 from a GitHub runner:
+# HTTP 202 with a ZERO-LENGTH body, where a laptop gets 200 and 470,856 bytes.
+# A 202 with no body is a bot-mitigation challenge asking the client to run
+# JavaScript, which the engine does not do. Capture locally during the monthly
+# review; the failure in CI is true and should stay loud.
+
+endpoints:
+  # The filename carries the month end. NYISO lags roughly six weeks -- on
+  # 2026-09-10 the newest published file was still 07312026 -- so the lookback
+  # has to reach back three months, not one.
+  - url: "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue-{month_end:%m%d%Y}.xlsx"
+    lookback: 3
+    delay_seconds: 2
+
+gates:
+  expect_status: 200
+  min_bytes: 235000
+  content_type_any: [spreadsheetml]
+  must_not_contain: ["Access Denied", "rate limit"]
+  max_shrink_pct: 40
+
+notes: |
+  Answers Q8: do generator queues behave like transmission queues? MISO's MTEP
+  files are transmission; this is generation, on the same grid-adjacent
+  question of what gets promised versus built.
+
+  Nine sheets. Active queue 96 projects keyed on Queue Pos., with Project Status,
+  Availability of Studies, Proposed In-Service, Proposed Sync and Proposed COD
+  -- all overwritten monthly. Withdrawn holds 1,451 projects, In Service 151.
+  (Counted from rows carrying a queue position. openpyxl's max_row says 340 /
+  2,516 / 159 -- that is the sheet DIMENSION, which counts formatting-only
+  rows, and quoting it overstated the active queue by 3.5x.)
+  Load Projects (73 projects) carries Peak MW load and End-Use, which is where
+  data-centre interconnection requests appear.
+
+  Homer Solar has held queue position 0276 since filing on 2008-01-30, with a
+  proposed COD of 06-2028.

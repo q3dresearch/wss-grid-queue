@@ -49,6 +49,23 @@ The costs are today's, so that reconstruction is a **revised** history. Whether
 MISO restates a delivered project's cost after the fact is itself only visible
 across captures, which is what makes every backfilled series provisional.
 
+## What happens to a generation project in New York
+
+![NYISO queue survival](examples/charts/nyiso-survival.svg)
+
+The same question from the other end. MISO's files say what transmission
+*costs*; NYISO's say what generation actually gets *built*.
+
+**1,697 projects have entered the NYISO interconnection queue. 149 were built —
+8.8%. 1,452 withdrew.** By capacity that is **319 GW abandoned against 14.8 GW
+delivered**, twenty-one times more given up than connected. The 96 still waiting
+have a median tenure of 7.2 years; the oldest has been in the queue 18.6.
+
+That much needs no archive — the withdrawn back-catalogue is complete. What
+only repeated capture can add is *when* each project left, and what its promised
+date said before NYISO overwrote it, which it does on **147 of the 149** it
+delivers.
+
 ## Who is late, and who pays
 
 ![Late capital by transmission owner](examples/charts/late-by-owner.svg)
@@ -108,6 +125,7 @@ Date ranges are machine-readable in [health/health.csv](health/health.csv)
 | `miso.mtep.in-service` | 5,183 delivered projects / $46.8B | 2026-09 | ongoing |
 | `miso.schedule26.charges` | indicative annual transmission charges per pricing zone, 5 years out | 2026-09 | ongoing |
 | `miso.schedule26a.mvp` | Schedule 26-A, Multi-Value Project portfolio charges | 2026-09 | ongoing |
+| `nyiso.interconnection.queue` | NY generation queue: 96 active, 1,452 withdrawn, 149 built | 2026-09 | ongoing, **local capture** |
 
 Rules for this table: a **new series** gets a row with the date coverage
 starts; a **discontinued series** keeps its row with a *covered until* date
