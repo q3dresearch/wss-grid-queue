@@ -1,0 +1,7 @@
+source_id,first_success_at,last_success_at,last_attempt_at,consecutive_failures,consecutive_throttled,expected_interval_h,staleness_h,gate_fail_rate_28d,status
+miso.mtep.approved,2026-09-09T11:20:46Z,2026-09-09T16:21:53Z,2026-09-09T16:21:53Z,0,0,720,3.6,0.000,active
+miso.mtep.in-service,2026-09-09T11:21:01Z,2026-09-09T16:22:08Z,2026-09-09T16:22:08Z,0,0,720,3.6,0.000,active
+miso.mtep.under-evaluation,2026-09-09T11:21:05Z,2026-09-09T16:22:11Z,2026-09-09T16:22:11Z,0,0,720,3.6,0.000,active
+miso.schedule26.charges,2026-09-09T11:42:48Z,2026-09-09T16:22:13Z,2026-09-09T16:22:13Z,0,0,720,3.6,0.000,active
+miso.schedule26a.mvp,2026-09-09T11:42:52Z,2026-09-09T16:22:16Z,2026-09-09T16:22:16Z,0,0,720,3.6,0.000,active
+nyiso.interconnection.queue,2026-09-09T16:22:19Z,2026-09-09T16:22:19Z,2026-09-09T16:22:19Z,0,0,720,3.6,0.000,active
