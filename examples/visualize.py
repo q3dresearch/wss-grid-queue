@@ -29,6 +29,21 @@ from pathlib import Path
 from xml.etree import ElementTree
 from xml.sax.saxutils import escape
 
+
+def _open_partition(path):
+    """Open a derived partition, gzipped or not.
+
+    Engine v0.6.34 made `derived/observations/*.csv.gz` the written form. Every
+    reader in this repo went on globbing `*.csv`, found nothing, and said "no
+    observations yet -- run capture + derive first" over a full archive. Stdlib
+    only, so `head`/`zcat` remain the only tools a reader needs.
+    """
+    import gzip
+    import io
+    if str(path).endswith(".gz"):
+        return io.TextIOWrapper(gzip.open(path, "rb"), encoding="utf-8", newline="")
+    return open(path, encoding="utf-8", newline="")
+
 REPO = Path(__file__).resolve().parents[1]
 OUT_DIR = REPO / "examples" / "charts"
 OBS_DIR = REPO / "derived" / "observations"
@@ -131,8 +146,8 @@ def write(name: str, svg: str) -> None:
 def load():
     """(source, entity) -> {metric: value}. One capture per month per entity."""
     rows = []
-    for f in sorted(OBS_DIR.glob("*.csv")):
-        rows += list(csv.DictReader(f.open()))
+    for f in sorted(OBS_DIR.glob("*.csv*")):
+        rows += list(csv.DictReader(_open_partition(f)))
     by = defaultdict(dict)
     for r in rows:
         by[(r["source_id"], r["entity_id"])][r["metric"]] = r["value"]
