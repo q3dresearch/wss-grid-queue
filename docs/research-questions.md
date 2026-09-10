@@ -44,7 +44,7 @@ justifies another registry entry.
 | Q10 | Does approved cost escalation reach ratepayers, and how fast? | ~12 months | **base measured, join needs the archive.** 2027 indicative charges total $443M across 34 pricing zones, and three of them — METC, ATC, NSP — carry 61%. Whether escalation flows into those numbers needs both series over time |
 | Q11 | How much do MISO's own five-year charge projections move? | ~12 months | needs the archive. Schedule 26 is a *projection*: today's estimate of 2027–2031 overwrites last year's estimate of the same years. It ships a `Variance` sheet, but the caption never says variance *from what* — captured vintages settle that, guessing does not |
 | Q12 | Is the backfilled delivered series itself revised? | ~12 months | needs the archive. Q9 reconstructs history from today's costs; whether MISO restates a delivered project's cost after the fact is only visible across captures, and would make every backfilled series provisional |
-| Q13 | Does transmission approval follow generation queue pressure? | a source | **source not yet added.** MISO's generator interconnection queue is a React app backed by a document API; the queue file itself was not found from the landing page. Until it is, generation and transmission cannot be joined |
+| Q13 | Does transmission approval follow generation queue pressure? | nothing | **answered — no, and the source that was missing has been found.** `https://www.misoenergy.org/api/giqueue/getprojects` returns 3,833 projects as 2.25 MB of JSON, no key, no auth. Queue GW and MTEP dollars approved correlate at **r = 0.73 in levels and ≈ 0 year-on-year** (−0.01 at lag 0, +0.19 at lag 1, −0.28 at lag 2). The level figure is a shared decade-long trend, not a response. Stable under both reconstruction assumptions — see below |
 
 **Q5 is the important negative result.** The obvious pitch for this repo —
 "how long do transmission projects take" — is already answerable from a single
@@ -61,6 +61,51 @@ is not a reason to widen the registry.
 A question with no named party who would act on the answer is trivia, and
 trivia does not justify a job that runs for years. Each row names a decision,
 not a sector.
+
+### Q13 in full: the queue mostly archives itself, and the answer is no
+
+The queue file was never missing — it is behind the interactive queue page at
+`/api/giqueue/getprojects`, plain JSON, no key. 3,833 projects, 27 fields.
+
+**It is largely self-archiving, which makes this a larder question rather than a
+capture.** MISO retains dead projects with their dates: `queueDate` on 99.8% of
+rows and `withdrawnDate` on **2,124 of the 2,146 withdrawn (99%)**. So the queue
+population at a past date can be rebuilt from a single download, and no listener
+is needed to answer Q13.
+
+**With one hole, measured rather than assumed.** Completions are *not* dated:
+only **226 of 554 `Done` projects carry a `doneDate`**, so 330 finished projects
+cannot be placed in time. The reconstruction was therefore run twice — once
+treating them as never having left (biased upward, worse the further back you
+go) and once excluding them entirely. The answer does not move:
+
+| | lag 0 | lag 1 | lag 2 |
+| --- | --- | --- | --- |
+| levels, undated kept | +0.74 | +0.72 | +0.55 |
+| levels, undated excluded | +0.73 | +0.69 | +0.48 |
+| **year-on-year, undated kept** | **−0.04** | **+0.21** | **−0.23** |
+| **year-on-year, undated excluded** | **−0.01** | **+0.19** | **−0.28** |
+
+**So: no.** Queue pressure and transmission approval both rose through the
+decade, and that shared trend is the whole of the r ≈ 0.73. Once each series is
+reduced to its year-on-year change, nothing survives at any lag out to two
+years. Transmission approval does not track queue pressure on an annual cadence.
+
+**Do not quote a GW figure from this reconstruction.** Counting today's `Active`
+rows gives 1,034 projects and 221.8 GW of `summerNetMW`, while MISO itself
+published 944 projects and 174 GW in May 2026. The gap is unexplained — a
+different date, or a different capacity basis among `summerNetMW`, `dp1ErisMw`
+and `dp1NrisMw`. The correlation above is unaffected because it is scale-free,
+but the level is not trustworthy enough to print.
+
+**What still perishes here**, and why it is recorded rather than captured: the
+completion dates that are missing on 59% of `Done` projects, and `studyPhase`
+(1,145 at GIA, 900 Phase 1, 509 Phase 2, 253 Phase 3) which carries no
+transition dates at all. Neither has a question demanding it today. The snapshot
+this analysis used is kept at
+`webprobes/screening/miso-giqueue-2026-09-10.json.gz` so the numbers can be
+rechecked without re-fetching.
+
 
 | who | questions | the decision it changes |
 | --- | --- | --- |
