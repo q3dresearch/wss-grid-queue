@@ -1,0 +1,71 @@
+# The Southwest Power Pool queue, and the requests it deletes.
+#
+# ONE REPORT, LIVE REQUESTS ONLY. opsportal.spp.org/Studies/GIActive is the
+# whole public queue -- 1,024 rows, 30 columns, 776 KB of server-rendered HTML.
+# There is no companion report for the requests that left: /Studies/GIInactive,
+# /GIWithdrawn and /GICompleted all 404. A withdrawn request is removed.
+#
+# THE VERDICT TURNED ON READING CELLS, NOT HEADERS. The report has a
+# `Date Withdrawn` column and it is populated on ZERO of 1,024 rows. ISO-NE's
+# public queue has an identically named column populated on 67.6% of its rows,
+# which makes ISO-NE a larder and keeps it out of this repository. Counting
+# column NAMES gets the two exactly backwards; see webprobes catalogue rows
+# spp.giq and isone.giq.
+#
+# SPP IS NOT SILENT ABOUT ENDINGS IN GENERAL, WHICH IS THE INTERESTING PART.
+# It publishes `Cessation Date` on 18 rows and 25 projects at
+# IA FULLY EXECUTED/ON SUSPENSION. It can express an ending. It publishes the
+# endings it is comfortable publishing and drops the withdrawals.
+#
+# THIS SOURCE IS THE MIRROR OF nyiso.interconnection.queue IN THIS SAME REPO.
+# NYISO captures from a laptop and returns a 202 bot challenge to CI; SPP times
+# out from a residential connection and answers normally from a GitHub runner.
+# One repository, two sources, opposite capture environments -- so neither
+# workflow's failure should be read as a fleet problem.
+source_id: spp.interconnection.queue
+status: active
+cadence: monthly
+schema_id: spp.interconnection.queue.v1
+
+publisher: Southwest Power Pool
+publisher_tier: first_party
+destroys_own_history: true
+licence: "SPP publishes this openly on its operations portal; no stated reuse restriction"
+# No developer, applicant or contact column exists in the 30 published columns.
+# `TO at POI` is a transmission owner code (OGE, AEP, SPS) -- a company, not a
+# person -- so there is nothing here to withhold.
+personal_data: none
+storage: git
+# An unchanged report still says "these 1,024 requests were still live on this
+# date", which is the presence observation the whole source is for.
+restate: every_capture
+
+notes: >-
+  Server-rendered HTML with no <tbody>; a parser slicing on one returns zero
+  rows and reports a healthy empty queue. Generation Interconnection Number is
+  a true key -- 100% filled, 1,024 distinct on 1,024 rows, formatted
+  TI-18-0827 -- so the across-capture join is exact. Use Generation Type (100%
+  filled, 7 values) and not Fuel Type (36%). Associated Studies, Facility
+  Report and Executed GIA hold the anchor text "View" only; presence is the
+  datum and the documents sit behind hrefs. ASP.NET answers the first request
+  with an AspxAutoDetectCookieSupport redirect and loops until its session
+  cookie is returned, which requests.Session does for free and bare curl does
+  not. The EIA-860M join was measured and is weak: EIA's SWPP planned set is
+  115 rows against this 1,024, so it caps at ~11% before any matching.
+
+endpoints:
+  - url: "https://opsportal.spp.org/Studies/GIActive"
+    delay_seconds: 3
+    timeout_seconds: 120
+
+gates:
+  expect_status: 200
+  # 776,658 bytes on 2026-09-14. A truncated fetch of a 1,024-row table is the
+  # realistic failure, and it is what this floor is for.
+  min_bytes: 300000
+  content_type_any: [html]
+  # The key column only. Gating on `Date Withdrawn` too would quarantine the
+  # capture if SPP ever removed that column -- and losing a capture is the one
+  # irreversible mistake, while a surprised parser is recoverable.
+  must_contain: ["Generation Interconnection Number"]
+  max_shrink_pct: 25
