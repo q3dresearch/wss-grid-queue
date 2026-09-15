@@ -1,0 +1,1874 @@
+{
+  "generated_at": "2026-09-15T13:14:54Z",
+  "note": "Inferred from the derived rows by `wss schema`, not hand-written. Regenerate after any derive.",
+  "sources": {
+    "miso.mtep.approved": {
+      "source_id": "miso.mtep.approved",
+      "schema_id": "miso.mtep.v1",
+      "cadence": "monthly",
+      "licence": "MISO publishes these openly; no stated reuse restriction",
+      "personal_data": "none",
+      "storage": "git",
+      "publisher": "Midcontinent Independent System Operator (MISO)",
+      "publisher_tier": "first_party",
+      "endpoints": 1
+    },
+    "miso.mtep.in-service": {
+      "source_id": "miso.mtep.in-service",
+      "schema_id": "miso.mtep.v1",
+      "cadence": "monthly",
+      "licence": "MISO publishes these openly; no stated reuse restriction",
+      "personal_data": "none",
+      "storage": "git",
+      "publisher": "Midcontinent Independent System Operator (MISO)",
+      "publisher_tier": "first_party",
+      "endpoints": 1
+    },
+    "miso.mtep.under-evaluation": {
+      "source_id": "miso.mtep.under-evaluation",
+      "schema_id": "miso.mtep.v1",
+      "cadence": "monthly",
+      "licence": "MISO publishes these openly; no stated reuse restriction",
+      "personal_data": "none",
+      "storage": "git",
+      "publisher": "Midcontinent Independent System Operator (MISO)",
+      "publisher_tier": "first_party",
+      "endpoints": 1
+    },
+    "miso.schedule26.charges": {
+      "source_id": "miso.schedule26.charges",
+      "schema_id": "miso.schedule26.v1",
+      "cadence": "monthly",
+      "licence": "MISO publishes these openly; no stated reuse restriction",
+      "personal_data": "none",
+      "storage": "git",
+      "publisher": "Midcontinent Independent System Operator (MISO)",
+      "publisher_tier": "first_party",
+      "endpoints": 1
+    },
+    "miso.schedule26a.mvp": {
+      "source_id": "miso.schedule26a.mvp",
+      "schema_id": "miso.schedule26.v1",
+      "cadence": "monthly",
+      "licence": "MISO publishes these openly; no stated reuse restriction",
+      "personal_data": "none",
+      "storage": "git",
+      "publisher": "Midcontinent Independent System Operator (MISO)",
+      "publisher_tier": "first_party",
+      "endpoints": 1
+    },
+    "nyiso.interconnection.queue": {
+      "source_id": "nyiso.interconnection.queue",
+      "schema_id": "nyiso.giq.v1",
+      "cadence": "monthly",
+      "licence": "NYISO publishes this openly; no stated reuse restriction",
+      "personal_data": "parties_only",
+      "storage": "git",
+      "publisher": "New York Independent System Operator (NYISO)",
+      "publisher_tier": "first_party",
+      "endpoints": 1
+    },
+    "spp.interconnection.queue": {
+      "source_id": "spp.interconnection.queue",
+      "schema_id": "spp.interconnection.queue.v1",
+      "cadence": "monthly",
+      "licence": "SPP publishes this openly on its operations portal; no stated reuse restriction",
+      "personal_data": "none",
+      "storage": "git",
+      "publisher": "Southwest Power Pool",
+      "publisher_tier": "first_party",
+      "endpoints": 1
+    }
+  },
+  "observations": {
+    "rows": 245549,
+    "columns": [
+      "series_id",
+      "entity_id",
+      "observed_at",
+      "captured_at",
+      "metric",
+      "value",
+      "unit",
+      "source_id",
+      "raw_ref",
+      "parser_version"
+    ],
+    "partitions": [
+      "2026-09.csv.gz"
+    ],
+    "series": {
+      "miso.mtep.approved": {
+        "rows": 77020,
+        "entities": 3211,
+        "entity_id_samples": [
+          "10001:21424",
+          "10022:21434",
+          "10022:21435"
+        ],
+        "metrics": [
+          "current_cost",
+          "expected_isd",
+          "planning_status",
+          "project_id",
+          "submitting_to",
+          "target_cycle"
+        ]
+      },
+      "miso.mtep.in-service": {
+        "rows": 103660,
+        "entities": 5183,
+        "entity_id_samples": [
+          "1",
+          "100",
+          "10000"
+        ],
+        "metrics": [
+          "current_cost",
+          "expected_isd",
+          "planning_status",
+          "submitting_to",
+          "target_cycle"
+        ]
+      },
+      "miso.mtep.under-evaluation": {
+        "rows": 11940,
+        "entities": 597,
+        "entity_id_samples": [
+          "15871",
+          "15873",
+          "15991"
+        ],
+        "metrics": [
+          "current_cost",
+          "expected_isd",
+          "planning_status",
+          "submitting_to",
+          "target_cycle"
+        ]
+      },
+      "miso.schedule26.charges": {
+        "rows": 3774,
+        "entities": 34,
+        "entity_id_samples": [
+          "zone:AMIL",
+          "zone:AMMO",
+          "zone:ATC"
+        ],
+        "metrics": [
+          "charge_2027",
+          "charge_2028",
+          "charge_2029",
+          "charge_2030",
+          "charge_2031",
+          "charge_2032",
+          "charge_2033",
+          "charge_2034",
+          "charge_2035",
+          "charge_2036",
+          "charge_2037",
+          "charge_2038",
+          "charge_2039",
+          "charge_2040",
+          "demand_2027",
+          "demand_2028",
+          "demand_2029",
+          "demand_2030",
+          "demand_2031",
+          "demand_2032",
+          "demand_2033",
+          "demand_2034",
+          "demand_2035",
+          "demand_2036",
+          "variance_2027",
+          "variance_2028",
+          "variance_2029",
+          "variance_2030",
+          "variance_2031",
+          "variance_2032",
+          "variance_2033",
+          "variance_2034",
+          "variance_2035",
+          "variance_2036",
+          "variance_2037",
+          "variance_2038",
+          "variance_2039"
+        ]
+      },
+      "miso.schedule26a.mvp": {
+        "rows": 162,
+        "entities": 18,
+        "entity_id_samples": [
+          "mvp:1203",
+          "mvp:2202",
+          "mvp:2220"
+        ],
+        "metrics": [
+          "gross_plant",
+          "mvp_in_service",
+          "mvp_name"
+        ]
+      },
+      "nyiso.interconnection.queue": {
+        "rows": 28325,
+        "entities": 2174,
+        "entity_id_samples": [
+          "queue:0001",
+          "queue:0002",
+          "queue:0003"
+        ],
+        "metrics": [
+          "county",
+          "developer",
+          "end_use",
+          "fuel",
+          "peak_load_mw",
+          "project_name",
+          "project_status",
+          "proposed_cod",
+          "proposed_in_service",
+          "proposed_sync",
+          "queue_state",
+          "requested_at",
+          "state",
+          "status_updated",
+          "studies_available",
+          "summer_mw",
+          "utility",
+          "winter_mw",
+          "zone"
+        ]
+      },
+      "spp.interconnection.queue": {
+        "rows": 20668,
+        "entities": 1043,
+        "entity_id_samples": [
+          "feed:spp_giq",
+          "generationtype:Battery/Storage",
+          "generationtype:Hybrid"
+        ],
+        "metrics": [
+          "capacity_mw",
+          "cause_of_delay",
+          "cessation_date",
+          "cluster",
+          "cluster_group",
+          "columns_published",
+          "commercial_operation_date",
+          "fuel_type",
+          "generation_type",
+          "has_associated_studies",
+          "has_executed_gia",
+          "has_facility_report",
+          "ifs_queue_number",
+          "jtiq_participant",
+          "listed",
+          "nameplate_mw",
+          "original_cod",
+          "place",
+          "proposed_in_service",
+          "requested_at",
+          "requested_deliverability_mw",
+          "requested_injection_mw",
+          "requests_listed",
+          "rows_with_cessation_date",
+          "rows_with_withdrawal_date",
+          "service_type",
+          "state",
+          "status",
+          "substation",
+          "summer_mw",
+          "transmission_owner",
+          "winter_mw"
+        ]
+      }
+    },
+    "parser_versions": [
+      "1"
+    ]
+  },
+  "metrics": {
+    "capacity_mw": {
+      "rows": 1024,
+      "unit": "mw",
+      "type": "number",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 1024,
+      "distinct_values": 373,
+      "empty": 0,
+      "min": "0.1",
+      "max": "1400.0",
+      "samples": [
+        "0.1",
+        "0.8",
+        "1.2"
+      ]
+    },
+    "cause_of_delay": {
+      "rows": 33,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 33,
+      "distinct_values": 5,
+      "empty": 0,
+      "samples": [
+        "Affected System Study",
+        "GIA delayed due to Affected Systems Study",
+        "Interim IGIA effective 3/3/2021 - AB"
+      ]
+    },
+    "cessation_date": {
+      "rows": 18,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 18,
+      "distinct_values": 16,
+      "empty": 0,
+      "samples": [
+        "1/15/2027",
+        "10/1/2026",
+        "10/24/2025"
+      ]
+    },
+    "charge_2027": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "37454.02902308053",
+      "max": "97120883.87051843",
+      "samples": [
+        "1086181.9275441451",
+        "1157904.6288554368",
+        "13026910.23211224"
+      ]
+    },
+    "charge_2028": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "50521.83779539773",
+      "max": "101753939.2074353",
+      "samples": [
+        "101753939.2074353",
+        "1112721.0950731284",
+        "127196.2736179468"
+      ]
+    },
+    "charge_2029": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "54845.384503534566",
+      "max": "103678467.68001196",
+      "samples": [
+        "103678467.68001196",
+        "105406.86977007074",
+        "1111028.4207835593"
+      ]
+    },
+    "charge_2030": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "55293.5855021456",
+      "max": "103094525.14206819",
+      "samples": [
+        "103094525.14206819",
+        "106192.70013184413",
+        "1096771.1115094158"
+      ]
+    },
+    "charge_2031": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "62341.12175544913",
+      "max": "101284116.80769378",
+      "samples": [
+        "101284116.80769378",
+        "1027354.5269259249",
+        "1103594.7706967932"
+      ]
+    },
+    "charge_2032": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "62335.49679867058",
+      "max": "99350323.18708508",
+      "samples": [
+        "1026968.4886935308",
+        "1087756.0081944892",
+        "119111.3640411032"
+      ]
+    },
+    "charge_2033": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "61236.99306604616",
+      "max": "97397405.30033231",
+      "samples": [
+        "1008831.2923044962",
+        "1068403.00818257",
+        "117007.28141548057"
+      ]
+    },
+    "charge_2034": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "60138.48933342169",
+      "max": "95444487.41357955",
+      "samples": [
+        "1049050.0081706508",
+        "114903.1987898579",
+        "11787734.112931589"
+      ]
+    },
+    "charge_2035": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "59039.98560079724",
+      "max": "93491569.5268267",
+      "samples": [
+        "1029697.0081587319",
+        "112799.11616423524",
+        "11537966.605671078"
+      ]
+    },
+    "charge_2036": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "57941.481868172756",
+      "max": "91538651.64007382",
+      "samples": [
+        "1010344.0081468117",
+        "110695.03353861255",
+        "11288199.098410552"
+      ]
+    },
+    "charge_2037": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "56842.978135548285",
+      "max": "89585733.75332105",
+      "samples": [
+        "108590.95091298994",
+        "11038431.591150042",
+        "11862633.478578772"
+      ]
+    },
+    "charge_2038": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "55744.47440292384",
+      "max": "87632815.8665682",
+      "samples": [
+        "106486.86828736731",
+        "10788664.083889525",
+        "11584805.201221967"
+      ]
+    },
+    "charge_2039": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "54645.97067029941",
+      "max": "85679897.97981536",
+      "samples": [
+        "104382.78566174461",
+        "10538896.57662901",
+        "11306976.923865182"
+      ]
+    },
+    "charge_2040": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "53547.46693767492",
+      "max": "83726980.09306271",
+      "samples": [
+        "102278.70303612197",
+        "10289129.069368497",
+        "11029148.646508412"
+      ]
+    },
+    "cluster": {
+      "rows": 973,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 973,
+      "distinct_values": 49,
+      "empty": 0,
+      "samples": [
+        "DIS-16-2-PQ",
+        "DIS-17-1-PQ",
+        "DISIS-2009-001-6"
+      ]
+    },
+    "cluster_group": {
+      "rows": 870,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 870,
+      "distinct_values": 5,
+      "empty": 0,
+      "samples": [
+        "01 NORTH",
+        "02 NEBRASKA",
+        "03 CENTRAL"
+      ]
+    },
+    "columns_published": {
+      "rows": 1,
+      "unit": "count",
+      "type": "number",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 1,
+      "distinct_values": 1,
+      "empty": 0,
+      "min": "30",
+      "max": "30",
+      "samples": [
+        "30"
+      ]
+    },
+    "commercial_operation_date": {
+      "rows": 923,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 923,
+      "distinct_values": 447,
+      "empty": 0,
+      "samples": [
+        "1/1/2002",
+        "1/1/2005",
+        "1/1/2006"
+      ]
+    },
+    "county": {
+      "rows": 2092,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "nyiso.interconnection.queue"
+      ],
+      "entities": 2092,
+      "distinct_values": 253,
+      "empty": 0,
+      "samples": [
+        "Alb.-Col.-Dutch.",
+        "Albany",
+        "Albany-Dutchess"
+      ]
+    },
+    "current_cost": {
+      "rows": 35928,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.mtep.approved",
+        "miso.mtep.in-service",
+        "miso.mtep.under-evaluation"
+      ],
+      "entities": 8979,
+      "distinct_values": 5029,
+      "empty": 0,
+      "min": "0.0",
+      "max": "1700000000.0",
+      "samples": [
+        "0.0",
+        "1.0",
+        "1000.0"
+      ]
+    },
+    "demand_2027": {
+      "rows": 102,
+      "unit": "mw",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "126777.496",
+      "max": "12004548.0",
+      "samples": [
+        "1092969.112",
+        "12004548.0",
+        "1201995.056"
+      ]
+    },
+    "demand_2028": {
+      "rows": 102,
+      "unit": "mw",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "128805.93593600001",
+      "max": "12196620.768000001",
+      "samples": [
+        "1006330.8905600001",
+        "10130089.675264",
+        "1110456.617792"
+      ]
+    },
+    "demand_2029": {
+      "rows": 102,
+      "unit": "mw",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "130866.830910976",
+      "max": "12391766.700288",
+      "samples": [
+        "1022432.18480896",
+        "10292171.110068224",
+        "1128223.923676672"
+      ]
+    },
+    "demand_2030": {
+      "rows": 102,
+      "unit": "mw",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "132960.7002055516",
+      "max": "12590034.967492608",
+      "samples": [
+        "1038791.0997659034",
+        "10456845.847829316",
+        "1146275.5064554987"
+      ]
+    },
+    "demand_2031": {
+      "rows": 102,
+      "unit": "mw",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "135088.07140884045",
+      "max": "12791475.526972491",
+      "samples": [
+        "1006458.6922884291",
+        "1055411.7573621578",
+        "10624155.381394586"
+      ]
+    },
+    "demand_2032": {
+      "rows": 102,
+      "unit": "mw",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "137249.4805513819",
+      "max": "12996139.13540405",
+      "samples": [
+        "1022562.031365044",
+        "1072298.3454799524",
+        "10794141.867496898"
+      ]
+    },
+    "demand_2033": {
+      "rows": 102,
+      "unit": "mw",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "139445.47224020402",
+      "max": "13204077.361570515",
+      "samples": [
+        "1038923.0238668848",
+        "1089455.1190076317",
+        "10966848.137376849"
+      ]
+    },
+    "demand_2034": {
+      "rows": 102,
+      "unit": "mw",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "141676.5997960473",
+      "max": "13415342.599355644",
+      "samples": [
+        "1003151.5305086791",
+        "1055545.792248755",
+        "1106886.4009117538"
+      ]
+    },
+    "demand_2035": {
+      "rows": 102,
+      "unit": "mw",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "143943.42539278403",
+      "max": "13629988.080945335",
+      "samples": [
+        "1019201.954996818",
+        "1072434.524924735",
+        "1124596.5833263418"
+      ]
+    },
+    "demand_2036": {
+      "rows": 102,
+      "unit": "mw",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "146246.5201990686",
+      "max": "13848067.89024046",
+      "samples": [
+        "1035509.1862767672",
+        "1089593.477323531",
+        "1142590.1286595634"
+      ]
+    },
+    "developer": {
+      "rows": 2174,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "nyiso.interconnection.queue"
+      ],
+      "entities": 2174,
+      "distinct_values": 1161,
+      "empty": 0,
+      "samples": [
+        "174 Power Global Properties",
+        "174 Power Global Properties, LLC",
+        "1st Rochdale Coop Group"
+      ]
+    },
+    "end_use": {
+      "rows": 51,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "nyiso.interconnection.queue"
+      ],
+      "entities": 51,
+      "distinct_values": 8,
+      "empty": 0,
+      "samples": [
+        "DAT",
+        "DAT-AI",
+        "DAT-CM"
+      ]
+    },
+    "expected_isd": {
+      "rows": 35964,
+      "unit": "date",
+      "type": "date",
+      "series": [
+        "miso.mtep.approved",
+        "miso.mtep.in-service",
+        "miso.mtep.under-evaluation"
+      ],
+      "entities": 8988,
+      "distinct_values": 2874,
+      "empty": 0,
+      "min": "2002-05-01",
+      "max": "2040-12-31",
+      "samples": [
+        "2002-05-01",
+        "2002-11-01",
+        "2003-11-15"
+      ]
+    },
+    "fuel": {
+      "rows": 2056,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "nyiso.interconnection.queue"
+      ],
+      "entities": 2056,
+      "distinct_values": 26,
+      "empty": 0,
+      "samples": [
+        "AC",
+        "C",
+        "CC"
+      ]
+    },
+    "fuel_type": {
+      "rows": 371,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 371,
+      "distinct_values": 30,
+      "empty": 0,
+      "samples": [
+        "Battery",
+        "CC",
+        "CT"
+      ]
+    },
+    "generation_type": {
+      "rows": 1023,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 1023,
+      "distinct_values": 7,
+      "empty": 0,
+      "samples": [
+        "Battery/Storage",
+        "Hybrid",
+        "Hydro"
+      ]
+    },
+    "gross_plant": {
+      "rows": 54,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26a.mvp"
+      ],
+      "entities": 18,
+      "distinct_values": 18,
+      "empty": 0,
+      "min": "4007320.0",
+      "max": "1033927001.0",
+      "samples": [
+        "1033927001.0",
+        "122896532.0",
+        "134576365.0"
+      ]
+    },
+    "has_associated_studies": {
+      "rows": 1,
+      "unit": "state",
+      "type": "text",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 1,
+      "distinct_values": 1,
+      "empty": 0,
+      "samples": [
+        "yes"
+      ]
+    },
+    "has_executed_gia": {
+      "rows": 184,
+      "unit": "state",
+      "type": "text",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 184,
+      "distinct_values": 1,
+      "empty": 0,
+      "samples": [
+        "yes"
+      ]
+    },
+    "has_facility_report": {
+      "rows": 57,
+      "unit": "state",
+      "type": "text",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 57,
+      "distinct_values": 1,
+      "empty": 0,
+      "samples": [
+        "yes"
+      ]
+    },
+    "ifs_queue_number": {
+      "rows": 201,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 201,
+      "distinct_values": 201,
+      "empty": 0,
+      "samples": [
+        "IFS-2012-002-01",
+        "IFS-2013-001-01",
+        "IFS-2013-001-02"
+      ]
+    },
+    "jtiq_participant": {
+      "rows": 928,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 928,
+      "distinct_values": 3,
+      "empty": 0,
+      "samples": [
+        "N/A",
+        "No",
+        "Yes"
+      ]
+    },
+    "listed": {
+      "rows": 1024,
+      "unit": "state",
+      "type": "text",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 1024,
+      "distinct_values": 1,
+      "empty": 0,
+      "samples": [
+        "yes"
+      ]
+    },
+    "mvp_in_service": {
+      "rows": 54,
+      "unit": "date",
+      "type": "date",
+      "series": [
+        "miso.schedule26a.mvp"
+      ],
+      "entities": 18,
+      "distinct_values": 18,
+      "empty": 0,
+      "min": "2013-12-06",
+      "max": "2024-12-31",
+      "samples": [
+        "2013-12-06",
+        "2015-03-26",
+        "2015-12-31"
+      ]
+    },
+    "mvp_name": {
+      "rows": 54,
+      "unit": "name",
+      "type": "text",
+      "series": [
+        "miso.schedule26a.mvp"
+      ],
+      "entities": 18,
+      "distinct_values": 18,
+      "empty": 0,
+      "samples": [
+        "Adair - Ottumwa 345",
+        "Adair-Palmyra Tap 345 kV Line",
+        "Big Stone South to Brookings"
+      ]
+    },
+    "nameplate_mw": {
+      "rows": 1024,
+      "unit": "mw",
+      "type": "number",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 1024,
+      "distinct_values": 136,
+      "empty": 0,
+      "min": "0.0",
+      "max": "1694.135",
+      "samples": [
+        "0.0",
+        "101.85",
+        "1018.91"
+      ]
+    },
+    "original_cod": {
+      "rows": 3,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 3,
+      "distinct_values": 3,
+      "empty": 0,
+      "samples": [
+        "12/31/2004",
+        "3/11/2016",
+        "5/31/2030"
+      ]
+    },
+    "peak_load_mw": {
+      "rows": 73,
+      "unit": "text",
+      "type": "number",
+      "series": [
+        "nyiso.interconnection.queue"
+      ],
+      "entities": 73,
+      "distinct_values": 40,
+      "empty": 0,
+      "min": "14.3",
+      "max": "1935",
+      "samples": [
+        "100",
+        "1000",
+        "110"
+      ]
+    },
+    "place": {
+      "rows": 1020,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 1020,
+      "distinct_values": 504,
+      "empty": 0,
+      "samples": [
+        "Aberdeen",
+        "Abernathy",
+        "Abernathy County"
+      ]
+    },
+    "planning_status": {
+      "rows": 35964,
+      "unit": "status",
+      "type": "text",
+      "series": [
+        "miso.mtep.approved",
+        "miso.mtep.in-service",
+        "miso.mtep.under-evaluation"
+      ],
+      "entities": 8988,
+      "distinct_values": 4,
+      "empty": 0,
+      "samples": [
+        "M1 - Proposed",
+        "M2 - Appendix A Approved",
+        "M3 - Under Construction"
+      ]
+    },
+    "project_id": {
+      "rows": 12844,
+      "unit": "id",
+      "type": "number",
+      "series": [
+        "miso.mtep.approved"
+      ],
+      "entities": 3211,
+      "distinct_values": 1497,
+      "empty": 0,
+      "min": "1900",
+      "max": "51406",
+      "samples": [
+        "10001",
+        "10022",
+        "10076"
+      ]
+    },
+    "project_name": {
+      "rows": 2176,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "nyiso.interconnection.queue"
+      ],
+      "entities": 2174,
+      "distinct_values": 1952,
+      "empty": 0,
+      "samples": [
+        "0 Highland Lake Rd - Wallkill",
+        "1 Gig Data Center East Fishkill, NY",
+        "114 Hartley Rd-Goshen"
+      ]
+    },
+    "project_status": {
+      "rows": 2148,
+      "unit": "text",
+      "type": "number",
+      "series": [
+        "nyiso.interconnection.queue"
+      ],
+      "entities": 2146,
+      "distinct_values": 12,
+      "empty": 0,
+      "min": "0",
+      "max": "15",
+      "samples": [
+        "0",
+        "1",
+        "10"
+      ]
+    },
+    "proposed_cod": {
+      "rows": 329,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "nyiso.interconnection.queue"
+      ],
+      "entities": 329,
+      "distinct_values": 53,
+      "empty": 0,
+      "samples": [
+        "01-2027",
+        "01-2028",
+        "01-2029"
+      ]
+    },
+    "proposed_in_service": {
+      "rows": 1157,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "nyiso.interconnection.queue",
+        "spp.interconnection.queue"
+      ],
+      "entities": 1157,
+      "distinct_values": 432,
+      "empty": 0,
+      "samples": [
+        "01-2027",
+        "01-2028",
+        "01-2029"
+      ]
+    },
+    "proposed_sync": {
+      "rows": 176,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "nyiso.interconnection.queue"
+      ],
+      "entities": 176,
+      "distinct_values": 49,
+      "empty": 0,
+      "samples": [
+        "01-2027",
+        "01-2028",
+        "01-2030"
+      ]
+    },
+    "queue_state": {
+      "rows": 2176,
+      "unit": "state",
+      "type": "text",
+      "series": [
+        "nyiso.interconnection.queue"
+      ],
+      "entities": 2174,
+      "distinct_values": 7,
+      "empty": 0,
+      "samples": [
+        "active",
+        "active_cluster",
+        "affected_system"
+      ]
+    },
+    "requested_at": {
+      "rows": 3179,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "nyiso.interconnection.queue",
+        "spp.interconnection.queue"
+      ],
+      "entities": 3179,
+      "distinct_values": 1619,
+      "empty": 0,
+      "samples": [
+        "1/1/2010",
+        "1/1/2016",
+        "1/1/2017"
+      ]
+    },
+    "requested_deliverability_mw": {
+      "rows": 1024,
+      "unit": "mw",
+      "type": "number",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 1024,
+      "distinct_values": 69,
+      "empty": 0,
+      "min": "0.0",
+      "max": "1400.0",
+      "samples": [
+        "0.0",
+        "100.0",
+        "103.0"
+      ]
+    },
+    "requested_injection_mw": {
+      "rows": 1024,
+      "unit": "mw",
+      "type": "number",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 1024,
+      "distinct_values": 75,
+      "empty": 0,
+      "min": "0.0",
+      "max": "1400.0",
+      "samples": [
+        "0.0",
+        "100.0",
+        "102.2"
+      ]
+    },
+    "requests_listed": {
+      "rows": 19,
+      "unit": "count",
+      "type": "number",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 19,
+      "distinct_values": 17,
+      "empty": 0,
+      "min": "1",
+      "max": "1024",
+      "samples": [
+        "1",
+        "1024",
+        "151"
+      ]
+    },
+    "rows_with_cessation_date": {
+      "rows": 1,
+      "unit": "count",
+      "type": "number",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 1,
+      "distinct_values": 1,
+      "empty": 0,
+      "min": "18",
+      "max": "18",
+      "samples": [
+        "18"
+      ]
+    },
+    "rows_with_withdrawal_date": {
+      "rows": 1,
+      "unit": "count",
+      "type": "bool",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 1,
+      "distinct_values": 1,
+      "empty": 0,
+      "samples": [
+        "0"
+      ]
+    },
+    "service_type": {
+      "rows": 1010,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 1010,
+      "distinct_values": 4,
+      "empty": 0,
+      "samples": [
+        "ER",
+        "ER/NR",
+        "ERIS"
+      ]
+    },
+    "state": {
+      "rows": 3192,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "nyiso.interconnection.queue",
+        "spp.interconnection.queue"
+      ],
+      "entities": 3192,
+      "distinct_values": 23,
+      "empty": 0,
+      "samples": [
+        "AR",
+        "CO",
+        "CT"
+      ]
+    },
+    "status": {
+      "rows": 1024,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 1024,
+      "distinct_values": 10,
+      "empty": 0,
+      "samples": [
+        "DISIS STAGE",
+        "ERAS",
+        "FACILITY STUDY STAGE"
+      ]
+    },
+    "status_updated": {
+      "rows": 2068,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "nyiso.interconnection.queue"
+      ],
+      "entities": 2066,
+      "distinct_values": 263,
+      "empty": 0,
+      "samples": [
+        "1/31/20",
+        "1/31/25",
+        "10/31/2025"
+      ]
+    },
+    "studies_available": {
+      "rows": 256,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "nyiso.interconnection.queue"
+      ],
+      "entities": 256,
+      "distinct_values": 30,
+      "empty": 0,
+      "samples": [
+        "FES",
+        "FES, FS",
+        "FES, SIS"
+      ]
+    },
+    "submitting_to": {
+      "rows": 35956,
+      "unit": "name",
+      "type": "text",
+      "series": [
+        "miso.mtep.approved",
+        "miso.mtep.in-service",
+        "miso.mtep.under-evaluation"
+      ],
+      "entities": 8986,
+      "distinct_values": 60,
+      "empty": 0,
+      "samples": [
+        "1803 ELECTRIC COOPERATIVE, INC. LATO",
+        "AEP Indiana Michigan Transmission Company, Inc.",
+        "AMEREN ILLINOIS"
+      ]
+    },
+    "substation": {
+      "rows": 990,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 990,
+      "distinct_values": 725,
+      "empty": 0,
+      "samples": [
+        "115 kV Fort Dodge Substation",
+        "115kV Monolith Substation",
+        "115kV Strandahl sub"
+      ]
+    },
+    "summer_mw": {
+      "rows": 3059,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "nyiso.interconnection.queue",
+        "spp.interconnection.queue"
+      ],
+      "entities": 3047,
+      "distinct_values": 801,
+      "empty": 0,
+      "samples": [
+        "0",
+        "0.0",
+        "0.1"
+      ]
+    },
+    "target_cycle": {
+      "rows": 35964,
+      "unit": "cycle",
+      "type": "text",
+      "series": [
+        "miso.mtep.approved",
+        "miso.mtep.in-service",
+        "miso.mtep.under-evaluation"
+      ],
+      "entities": 8988,
+      "distinct_values": 23,
+      "empty": 0,
+      "samples": [
+        "MTEP03",
+        "MTEP05",
+        "MTEP06"
+      ]
+    },
+    "transmission_owner": {
+      "rows": 1006,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "spp.interconnection.queue"
+      ],
+      "entities": 1006,
+      "distinct_values": 58,
+      "empty": 0,
+      "samples": [
+        "AECC",
+        "AECI",
+        "AEP"
+      ]
+    },
+    "utility": {
+      "rows": 2090,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "nyiso.interconnection.queue"
+      ],
+      "entities": 2090,
+      "distinct_values": 83,
+      "empty": 0,
+      "samples": [
+        "CHG&E",
+        "CHGE",
+        "CHGE/NM-NG/NYSEG"
+      ]
+    },
+    "variance_2027": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "-4152819.4727273285",
+      "max": "2864761.5680387616",
+      "samples": [
+        "-10341.591228171208",
+        "-126217.84538413514",
+        "-169267.28777810722"
+      ]
+    },
+    "variance_2028": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "-3819524.6823871285",
+      "max": "2991050.323114872",
+      "samples": [
+        "-157509.28323682607",
+        "-1625455.5085582286",
+        "-18510.807018018793"
+      ]
+    },
+    "variance_2029": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "-629047.041574806",
+      "max": "3031833.212717846",
+      "samples": [
+        "-151055.0133598938",
+        "-243040.3634097674",
+        "-446143.78011503816"
+      ]
+    },
+    "variance_2030": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "-659400.2530492842",
+      "max": "2983617.81842418",
+      "samples": [
+        "-150017.04688216373",
+        "-239906.02508695237",
+        "-439579.69652305543"
+      ]
+    },
+    "variance_2031": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "-530714.539239198",
+      "max": "3111677.1130361557",
+      "samples": [
+        "-138204.23122787056",
+        "-191996.38976567518",
+        "-311874.73933423124"
+      ]
+    },
+    "variance_2032": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "-555802.2153580189",
+      "max": "3054398.6035306454",
+      "samples": [
+        "-136831.19093385665",
+        "-187307.4658144028",
+        "-301503.11434074864"
+      ]
+    },
+    "variance_2033": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "-604918.1019883603",
+      "max": "2968159.7852281183",
+      "samples": [
+        "-137089.43225316913",
+        "-189372.10477493936",
+        "-309465.65757773817"
+      ]
+    },
+    "variance_2034": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "-654033.9886188507",
+      "max": "2881920.9669255167",
+      "samples": [
+        "-137347.67357248394",
+        "-191436.74373548152",
+        "-317428.2008147221"
+      ]
+    },
+    "variance_2035": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "-703149.8752491772",
+      "max": "2795682.148622766",
+      "samples": [
+        "-137605.91489179595",
+        "-193501.38269602042",
+        "-325390.74405171536"
+      ]
+    },
+    "variance_2036": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "-752265.7618795186",
+      "max": "2709443.33032012",
+      "samples": [
+        "-137864.1562111124",
+        "-195566.021656557",
+        "-333353.28728871606"
+      ]
+    },
+    "variance_2037": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "-801381.6485100016",
+      "max": "2623204.5120176077",
+      "samples": [
+        "-109935.34761817753",
+        "-138122.39753042767",
+        "-1434.5189198586158"
+      ]
+    },
+    "variance_2038": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "-850497.5351403579",
+      "max": "2536965.6937149167",
+      "samples": [
+        "-123167.9017363619",
+        "-138380.63884974155",
+        "-199695.29957763664"
+      ]
+    },
+    "variance_2039": {
+      "rows": 102,
+      "unit": "usd",
+      "type": "number",
+      "series": [
+        "miso.schedule26.charges"
+      ],
+      "entities": 34,
+      "distinct_values": 34,
+      "empty": 0,
+      "min": "-899613.4217707813",
+      "max": "2450726.8754124343",
+      "samples": [
+        "-136400.45585453324",
+        "-138638.88016905473",
+        "-201759.93853817275"
+      ]
+    },
+    "winter_mw": {
+      "rows": 2775,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "nyiso.interconnection.queue",
+        "spp.interconnection.queue"
+      ],
+      "entities": 2775,
+      "distinct_values": 735,
+      "empty": 0,
+      "samples": [
+        "0",
+        "0.0",
+        "0.1"
+      ]
+    },
+    "zone": {
+      "rows": 1989,
+      "unit": "text",
+      "type": "text",
+      "series": [
+        "nyiso.interconnection.queue"
+      ],
+      "entities": 1989,
+      "distinct_values": 41,
+      "empty": 0,
+      "samples": [
+        "A",
+        "A, B",
+        "A,E,J"
+      ]
+    }
+  },
+  "raw": {
+    "files": 7,
+    "bytes_on_disk": 2996714,
+    "capture_dates": 2,
+    "first_capture": "2026-09-09T11:20:46Z",
+    "last_capture": "2026-09-14T12:01:56Z"
+  }
+}
