@@ -194,9 +194,9 @@ wss health --dry-run
 
 ## Licences
 
-Two separate files, on purpose: code is MIT ([LICENSE](LICENSE)); data
-(`raw/`, `manifest/`, `derived/`) is CC-BY-4.0
-([LICENSE-DATA](LICENSE-DATA)), citation in [CITATION.cff](CITATION.cff).
-Captured content remains subject to the publisher's own terms.
+Two separate files, on purpose: code is MIT ([LICENSE](LICENSE)); **the data is
+not CC-BY-4.0** ([LICENSE-DATA](LICENSE-DATA)). MISO, NYISO and SPP each state
+no reuse restriction, which is silence rather than a grant — and as private
+non-profit RTOs their output is not US government work and is not public domain
+by default. Attribute the operator, not this repository.
 
-Topics: `git-scraping` · `open-data` · `point-in-time-data` · `dataset`
