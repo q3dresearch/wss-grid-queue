@@ -192,6 +192,25 @@ wss health --dry-run
    workflow), confirm the bot's data commit lands, then let the cron take
    over.
 
+## Questions this exists to answer
+
+![All 8 questions here are answered or on a clock.](examples/charts/maturity.svg)
+
+**7 of these 8 are answered from captures already held.** 1 become answerable only as the series lengthens — the plate shows when. Every other one is on the clock, so the plate is a schedule rather than a wish list.
+
+
+| # | question | status |
+| --- | --- | --- |
+| Q1 | How much capital is in the approved transmission pipeline? | **answered** — $85.6B → [pipeline capital](examples/charts/pipeline-capital.svg) |
+| Q2 | Is that pipeline on schedule? | **answered — no.** It is already behind → [already late](examples/charts/already-late.svg) |
+| Q3 | Is the lateness spread evenly across transmission owners? | **answered — no** → [late by owner](examples/charts/late-by-owner.svg) |
+| Q4 | Who pays for it? | **answered** — three pricing zones carry 61% of the 2027 bill → [who pays](examples/charts/who-pays.svg) |
+| Q5 | How much has actually been delivered, and when? | **answered**, rebuilt from one capture → [delivered over time](examples/charts/delivered-over-time.svg) |
+| Q6 | What share of an interconnection queue is ever built? | **answered** for NYISO — 319 GW abandoned against 15 GW built → [NYISO survival](examples/charts/nyiso-survival.svg) |
+| Q7 | Does MISO publish how long a project takes? | **answered — yes**, so this repo does not need to derive it → [duration is archived](examples/charts/duration-is-archived.svg) |
+| Q8 | When a cost estimate is revised, what was the previous one? | needs 2+ captures. **The reason for capturing** — the slot is overwritten in place, and `?v=` is cache-busting rather than version addressing |
+
+
 ## Licences
 
 Two separate files, on purpose: code is MIT ([LICENSE](LICENSE)); **the data is
