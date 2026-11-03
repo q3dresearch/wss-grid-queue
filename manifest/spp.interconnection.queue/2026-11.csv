@@ -1,0 +1,2 @@
+source_id,url,fetched_at,http_status,content_type,content_length,content_sha256,etag,last_modified,outcome,raw_ref,reason,warnings
+spp.interconnection.queue,https://opsportal.spp.org/Studies/GIActive,2026-11-03T06:58:24Z,200,text/html,773408,70d4b0e93d0a95e11ef88a643b76628ced9e0555072770b83865a6986fb4b9e9,,,changed,raw/spp.interconnection.queue/2026/11/20261103T065824Z-70d4b0e93d0a.html.gz,,

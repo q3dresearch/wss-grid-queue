@@ -1,11 +1,1 @@
-{
-  "cadence": "monthly",
-  "completed_at": "2026-10-23T07:45:55Z",
-  "outcomes": {
-    "changed": 1,
-    "error": 1,
-    "unchanged": 5
-  },
-  "shard": "1/1",
-  "sources": 7
-}
+{"cadence":"monthly","sources_planned":7,"completed_at":"2026-11-03T06:58:51Z","run_id":"41593186448","workflow":"capture-monthly"}
